@@ -1,4 +1,7 @@
-<div class="task">
-  <h3>{{ task().name }} <fa-icon [style.color]="'red'"  [icon]="faTimes"></fa-icon> </h3>
+<div [ngClass]="{ reminder: task().reminder }" class="task">
+  <h3>
+    {{ task().name }}
+    <fa-icon [icon]="faTimes" (click)="onDelete(task())"></fa-icon>
+  </h3>
   <p>{{ task().date }}</p>
 </div>
